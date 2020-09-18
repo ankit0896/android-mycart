@@ -68,8 +68,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyCartViewHold
             @Override
             public void onClick(View v) {
                 int quanity = new Integer((String) holder.quantity.getText());
-                if (quanity == 0) {
-                    Toast.makeText(context, "Quantity Cannot be Neagative !!", Toast.LENGTH_SHORT).show();
+                if (quanity == 1) {
+                    onItemClickListner.onDeleteItemClick(position);
                 } else {
                     quanity--;
                     holder.quantity.setText("" + quanity);
