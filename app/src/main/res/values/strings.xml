@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyCart</string>
+    <string name="productName">Product Name</string>
+    <string name="product_des">This is food very delicious.</string>
+    <string name="number">0</string>
+    <string name="addToCart">Add To Cart</string>
+    <string name="updateCart">Update Cart</string>
+    <string name="checkout">Proceed To Payment</string>
+    <string name="confirm">Confirm Your Order</string>
+    <string name="go">Go</string>
+    <string name="cancel">Cancel</string>
+    <string name="back">back</string>
+</resources>
