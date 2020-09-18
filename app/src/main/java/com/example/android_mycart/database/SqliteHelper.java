@@ -39,9 +39,9 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     public boolean cartInsertProduct(Product product, Context context) {
         if (updateCartProduct(product)) {
-            Toast.makeText(context, "Item Updated", Toast.LENGTH_SHORT).show();
+
         } else {
-            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show();
+
         }
         return true;
     }
@@ -70,7 +70,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
             contentValues.put("product_quantity", product.getQuantity());
             db.insert(TABLE_NAME, null, contentValues);
             Log.d("ProductId", product.toString());
-            Toast.makeText(context, product.getQuantity()+" "+product.getName()+" Added to Cart !!", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, product.getQuantity() + " " + product.getName() + " Added to Cart !!", Toast.LENGTH_LONG).show();
             db.close();
         }
         return true;

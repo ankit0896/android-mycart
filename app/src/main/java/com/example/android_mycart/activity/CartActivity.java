@@ -1,6 +1,7 @@
 package com.example.android_mycart.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -128,6 +129,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
             quan = quan + p.getQuantity();
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
+        final int finalQuan = quan;
+        final int finalAmount = amount;
         builder.setIcon(R.drawable.buba)
                 .setTitle(R.string.confirm)
                 .setMessage("Your Order " + quan + " Items and Total Amout is " + amount + ".")
@@ -135,6 +138,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        clearCart();
+                        startActivity(new Intent(CartActivity.this,ThankyouActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra("quantity", finalQuan).putExtra("amount", finalAmount));
                     }
                 }).setNegativeButton(R.string.back, new DialogInterface.OnClickListener() {
             @Override
